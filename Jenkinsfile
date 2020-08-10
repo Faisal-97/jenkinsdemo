@@ -6,28 +6,5 @@ pipeline {
                 stage('DeployStaging'){ steps { echo 'deploying application on staging environment' } }
                  stage('ValidateStageDeployment') {steps { echo 'validate deployment on staging' } }
          }
- 
-    agent { dockerfile true }
-    stages {
-        stage('Build') {
-            steps {
-                sh "ls"
-                echo 'Building..'
-             
-            }
-        }
-        
-        // stage 2
-        stage('Deploy') {
-            steps {
-                echo 'Deploying..'
-             }
-        }
-        
-        stage('ValidateStageDeployment') {
-            steps {
-                echo 'validate deployment on staging....'
-            }
-        }
-    }
+
 }
